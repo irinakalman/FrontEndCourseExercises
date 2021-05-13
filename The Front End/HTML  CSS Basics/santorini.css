@@ -1,0 +1,29 @@
+
+.container {
+}
+.another {
+      width: 150px;
+      height: 150px;
+      align:top;
+    }
+.text {
+      border: 3px solid black;
+      padding: 50px auto;
+    }
+p {
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+h3 {
+      font-size: xx-large;
+   }
+.places {
+  font-family: Arial, Helvetica, sans-serif;
+        }
+#myHeader {
+          text-align: center;
+          margin: 50px;
+          padding: 25px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color:black;
+      }        
