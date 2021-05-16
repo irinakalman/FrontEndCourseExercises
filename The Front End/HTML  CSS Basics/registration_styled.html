@@ -19,7 +19,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .main {
+        main {
             width: 70%;
             margin: 0 auto;
             padding: 80px;
@@ -46,10 +46,13 @@
         button {
             padding: 5px;
         }
+        #formbuttons {
+            text-align: right;
+        }
     </style>
 </head>
 <body>
-    <div class="main">
+    <main>
         <div class="register">
         
             <form action="https://athena.socialhackersacademy.org/form.php">
@@ -79,8 +82,7 @@
                         <td><input type="password" id="Confirm Password" name="Confirm Password"  placeholder="Enter Password here"/></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>
+                        <td id="formbuttons" colspan="2">
                             <input type="reset" value ="Clear Form" />
                             <button>Create Account</button>
                         </td>
@@ -88,6 +90,6 @@
                 </table>
             </form>
         </div>
-    </div>
+    </main>
 </body>
 </html>
