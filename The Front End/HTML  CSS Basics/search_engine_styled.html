@@ -1,67 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="search" content="search engine">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="search" content="search engine" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Search Engine</title>
     <style>
-        body {
-            background-image: linear-gradient(
+      body {
+        background-image: linear-gradient(
             rgba(0, 0, 0, 0.5),
             rgba(0, 0, 0, 0.5)
-            ), url(search_eng.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-        .search {
-    
-            width: 40%;
-            margin: 150px auto;
-            padding: 100px;
-        }
-        
-        form {
-            text-align: center;
-            /*border: 2px solid black;*/
-            width: 60%;
-        }
-        input {
-            padding: 10px;
-            margin: 20px;
-            width: 20%;
-        }
-        #inputstyle, #inputforma {
-            width: 80%;
-            padding: 12px 10px;
-            flex:1;
-            font-size: 1.125rem;
-            align-items: center;
-            border-radius: 6px;
-        }
-        .searchTerm {
-            width: 30%;
-            border: 2px solid black;
-            padding: 10px;
-            height: 40px;
-            background: salmon;
-            text-align: center;
-            border-radius: 6px;
-        }
+          ),
+          url(search_eng.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .search {
+        width: 40%;
+        margin: 150px auto;
+        padding: 100px;
+      }
+
+      form {
+        text-align: center;
+        /*border: 2px solid black;*/
+        width: 60%;
+      }
+      input {
+        padding: 10px;
+        margin: 20px;
+        width: 20%;
+      }
+      #inputstyle,
+      #inputforma {
+        width: 80%;
+        padding: 12px 10px;
+        flex: 1;
+        font-size: 1.125rem;
+        align-items: center;
+        border-radius: 6px;
+      }
+      .searchTerm {
+        width: 30%;
+        border: 2px solid black;
+        padding: 10px;
+        height: 40px;
+        background: salmon;
+        text-align: center;
+        border-radius: 6px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="search">
-        
-    <form id="inputforma" action="https://www.bing.com/search?" method="get">  
-        <label>
-        <input id="inputstyle" name="q" type="text">
-        <input type="submit" class="searchTerm" value="Search" >
-        </label>
-        
-    </form>
-</div>
-</body>
+      <form id="inputforma" action="https://www.bing.com/search?" method="get">       
+          <input id="inputstyle" name="q" type="text" />
+          <input type="submit" class="searchTerm" value="Search" />
+      </form>
+    </div>
+  </body>
 </html>
