@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors Game against computer</h1>
+    <script>
+        let computerScore = 0;
+        let playerScore = 0;
+        // let game(playerScore, computerScore);
+
+        function computerPlay() {
+            const myArray = ['rock', 'paper', 'scissors'];
+            let randomChoice = Math.floor(Math.random() * 3);
+            console.log(randomChoice);
+            return myArray[randomChoice];
+
+
+        }
+        // computerPlay();
+
+        function playRound() {
+            let playerSelection = prompt("What's your choice?");
+            playerSelection = playerSelection.toLowerCase();
+            let computerSelection = computerPlay();
+            if ((playerSelection == "rock") && (computerSelection == "paper")) {
+                return console.log("You Lose! Paper beats Rock");
+            } else {
+                return console.log("You won!Paper beats rock");
+                // console.log(return);
+            }
+        }
+        // playRound();
+        // your code here!
+        //     if playerSelection === "rock" && computerSelection === "paper";
+        //     return result("You Lose! Paper beats Rock");
+        // } else if {
+        //     playerSelection === "paper" && computerSelection === "rock";
+        //     return result("You won! Paper beats Rock");
+        // } else if {
+        //     playerSelection === 'scissors' && computerSelection === "paper";
+        //     return result("You won! Scissors beats Paper");
+        // }
+        // switch (expression) {
+        //     case n:
+        //         code block
+        //         break;
+        //     case n:
+        //         code block
+        //         break;
+        //     default:
+        //     default code block
+        // }
+        function game() {
+            while (true) {
+                let playerSelection = prompt("What's your choice?");
+                let computerSelection = computerPlay();
+                switch (playerSelection) {
+                    case "rock":
+                        switch (computerSelection) {
+                            case "paper":
+                                console.log("You Lose! Paper beats Rock");
+                                computerScore++;
+                                break;
+                            case "scissors":
+                                console.log("You won! Rock beats scissors");
+                                playerScore++;
+                                break;
+                            default:
+                                console.log("It is a tie. Play again");
+                        }
+                        break;
+                    case "paper":
+                        switch (computerSelection) {
+                            case "rock":
+                                console.log("You won! Paper beats Rock");
+                                playerScore++;
+                                break;
+                            case "scissors":
+                                console.log(" You lost! Scissors beats Paper ");
+                                computerScore++;
+                                break;
+                            default:
+                                console.log("It is a tie. Play again");
+                        }
+                        break;
+                    case "scissors":
+                        switch (computerSelection) {
+                            case "rock":
+                                console.log("You lost! Rock beats scissors");
+                                computerScore++;
+                                break;
+                            case "paper":
+                                console.log("You won! Scissors beat Paper ");
+                                playerScore++;
+                                break;
+                            default:
+                                console.log("It is a tie. Play again");
+                        }
+                }
+                console.log(playerScore, computerScore);
+                if (playerScore === 4) {
+                    console.log("You beat the machine!");
+                    return;
+                } else if (computerScore === 4) {
+                    console.log("The machine kicked your ass");
+                    return;
+                }
+            }
+        }
+
+
+
+
+
+
+        // function game() {
+        //     let playerSelection = prompt("What's your choice?");
+        //     if ((playerSelection.toLowerCase() === 'scissors') && (computerSelection === "paper")) {
+        //         return console.log("You won! Scissors beats Paper");
+        //     } else {
+        //         return console.log("You lost! Scissors beats Paper ");
+        //     }
+        // }
+        // game();
+
+        // function game() {
+        //     let playerSelection = prompt("What's your choice?");
+        //     if ((playerSelection.toLowerCase() === 'scissors') && (computerSelection === "rock")) {
+        //         return console.log("You lost! Rock beats scissors");
+        //     } else {
+        //         return console.log("You won! Rock beats scissors");
+        //     }
+        // }
+        // game();
+
+
+        // function game() {
+        //     let playerSelection = prompt("What's your choice?");
+        //     if ((playerSelection.toLowerCase() === 'scissors') && (computerSelection === "rock")) {
+        //         return console.log("You lost! Scissors beats Paper");
+        //     } else {
+        //         return console.log("You won! Scissors beats Paper");
+        //     }
+        // }
+
+        // function game() {
+        //     let playerSelection = prompt("What's your choice?");
+        //     if (playerSelection.toLowerCase() == computerSelection) {
+        //         return console.log("You are even! Try again.");
+        //     }
+        // }
+
+        // const playerSelection = 'rock'
+        // const computerSelection = computerPlay()
+        // console.log(playRound(playerSelection, computerSelection))
+    </script>
+</body>
+
+</html>
