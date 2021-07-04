@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: separate;
+        border-spacing: 4px;
+        font-weight: bold;
+        font-size: xx-large;
+        margin: 0 auto;
+
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 10px 15px;
+    }
+
+
+    table:last-child {
+        margin-bottom: 0;
+    }
+</style>
+
+<body>
+    <section class="row">
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">HEADING</th>
+                        <th>A4</th>
+                        <th>A5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" rowspan="3">BCD1</td>
+                        <td>B2</td>
+                        <td>B3</td>
+                        <td>B4</td>
+                        <td>B5</td>
+                    </tr>
+                    <tr>
+                        <td>C2</td>
+                        <td colspan="2">C3,4</td>
+                        <td rowspan="2">CD5</td>
+                    </tr>
+                    <tr>
+                        <td>D2</td>
+                        <td>D3</td>
+                        <td>D4</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">E1</td>
+                        <td colspan="4">E2~5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+</body>
+
+</html>
