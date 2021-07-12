@@ -1,0 +1,58 @@
+body {
+
+    margin: 20px auto;
+    padding: 30px;
+    background-image: url(/media/nasa-Q1p7bh3SHj8-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+table {
+    text-align: center;
+    background-color: #70380bfd;
+    border: 3px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+td {
+    margin: 5px;
+    padding: 15px;
+    border: 3px solid black;
+    line-height: 150%;
+    font-size: 16px;
+}
+
+tr td:nth-child(2) {
+    max-width: 75ch;
+
+}
+
+thead {
+    background-color: #ad630e;
+}
+
+h1 {
+    margin-right: 10px;
+    font-size: 40px;
+    padding: 10px;
+    margin-left: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+.links a {
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
