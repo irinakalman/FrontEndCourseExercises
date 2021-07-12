@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1) Type of function? It is a Function Declaration that return values(It returns a value when its completed)
+        function add7(num) {
+            // Your code goes here...
+            return num + 7;
+        }
+        console.log(add7(5));
+
+
+        // 2) Type of function? It is a function declaration and it returns 2 values. It consisted of 2 parameters.
+        const multiplyNum = function (numberOne, numberTwo) {
+            // Your code goes here...
+            return numberOne * numberTwo;
+        }
+        console.log(multiplyNum(3, 5));
+
+        // 3) Type of function? It is an arrow Function& Function expression 
+        let capitalizeStr = () => {
+            // Your code goes here...
+            let str = "hello world";
+            let newStr = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+            console.log(newStr);
+        };
+        capitalizeStr();
+
+        // 4) Type of function? Function Declaration
+        function lastLetter() {
+            // Your code goes here...
+            let str = "weather";
+            let lastChar = str[str.length - 1];
+            console.log(lastChar);
+        }
+        lastLetter();
+
+        // 5) Type of function? This is a declaration function
+        function average(num1, num2, num3) {
+            // Your code goes here...
+            let averNum = (num1 + num2 + num3) / 3;
+            console.log(averNum);
+        }
+        average(2, 4, 8);
+        // 6) Type of function?
+        function greaterNum(num1, num2) {
+            // Your code goes here...
+            if (num1 > num2) {
+                console.log(num1);
+            } else {
+                console.log(num2);
+            }
+        }
+        greaterNum(2, 6);
+    </script>
+</body>
+
+</html>
