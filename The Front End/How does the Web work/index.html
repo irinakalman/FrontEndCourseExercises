@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How does the Web work">
+    <title>How does the web work</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- How does the Web work -->
+    <header>
+        <h1>How does the Web work</h1>
+    </header>
+    <nav>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#how_does_the_internet_work">How does the Internet Work</a></li>
+            <li><a href="#protocols">Internet Protocols</a></li>
+            <li><a href="#ip_addresses">IP Addresses</a></li>
+            <li><a href="#_dns">DNS</a></li>
+            <li><a href="#_packets">Packets</a></li>
+            <li><a href="#_routers">Routers</a></li>
+            <li><a href="#_http">HTTP</a></li>
+            <li><a href="#_html">HTML</a></li>
+        </ul>
+    </nav>
+    <div>
+        <p>An internet was invented in USA in the 1960s. It was used only by government institutions as Military and
+            Universities to share information. The computers were massive and unaffordable machines. There was a need to
+            create an interconnected network of computers between USA and international academic researchers. The
+            official
+            birthday of the Internet is on the 1st of January 1983. Before there was no standard protocol for connecting
+            and
+            communication between each other. However, Transfer Control Protocol (TCP) or Internet Protocol(IP) was
+            invented. Below you can see the first commercial computer "UNIVAC I". It was invented in 1951 and it could
+            do
+            around 1000 calculations per second</p>
+
+        <div id="how_does_the_internet_work" class="first_pc"><img src="media/univac.jpg" width="450" height="250"
+                alt="first computer"></div>
+        <h2>How does the Internet work</h2>
+        <p class="network">
+            The Internet is the large network of computers that are connected to each other and can communicate between
+            each
+            other. We also use routers that are like computers and let us connect local computers to one another. There
+            was
+            a need for another infrastructure that will be connected to the rest of the world. That is when the
+            telephone
+            line started to be used for that. The telephone line is used to connect with the rest of the world by using
+            modem which helps us to do that. The modem equipment helps the information to be transferred and transformed
+            to
+            telephone line and vice versa.
+        </p>
+        <p>
+            There is another network that is used which called Internet Service Provider (ISP). This network has
+            special
+            routers that can access other IP's. That is where we send our information, then it it sent by ISP to the
+            specific IP that we intend to send.
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ewrBalT_eBM" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    <!-- Internet Protocols -->
+    <div id="protocols" class="internet_protocols">
+        <h2>Internet Protocols</h2>
+        <p> Each computer has its own specific address which is named Internet Protocol(IP) by which it can be
+            identified on
+            the Internet. The IP address is a string of number which are separated by periods. The IP address is
+            assigned to
+            each computer by its ISP. The first major version of the IP is IPv4 (Internet Protocol Version). It is the
+            most
+            popular version of the Internet. Another version which started on 2006 is IPv6. The difference between them
+            is
+            the size of the address.
+        </p>
+    </div>
+    <!-- IP addresses -->
+    <div id="ip_addresses" class="ip">
+        <h2>IP addresses</h2>
+        <p>
+            There are different types and categories of IP addresses. Everyone who uses internet service plan has
+            private IP
+            address and Public. Private IP is visible only locally, it is not shared to the rest of the world. Usually
+            routers generate those IP addresses for every device that tries to connect locally in order to differentiate
+            them. On the other hand, public IP address is visible to the rest of the world. It is provided by ISP.
+        </p>
+    </div>
+    <div class="IPimg"><img src="media/IP.jpg" width="480" height="278" alt="The Image of IP"></div>
+    <!-- DNS -->
+    <div id="_dns" class="dns">
+        <h2>DNS</h2>
+        <p>
+            Real IP addresses are hard to remember for people, that is why DNS(Domain Name Servers) was created. It is
+            like
+            a phone book for the Internet. People try to access website by domain names and the DNS is looking for their
+            actual IP address. How does it work? First, we type the domain name in our browser. The browser checks the
+            computer(local cache) if it knows this name. If it doesn't, it goes to ask the DNS server.
+        </p>
+    </div>
+    <!-- Packets (tcp/udp) -->
+    <div id="_packets" class="packets">
+        <h2>Packets (TCP/UDP)</h2>
+        <p>
+            In order to send the data between computer, it is transformed into packets so that it can be sent and load
+            fast.
+            The packets are sent separately and travel from router to router until they reach their destination. It does
+            not
+            matter in which order they will be sent, they just must all arrive on time. You can read more <a class="link"
+                href="https://www.cs.ait.ac.th/~on/O/oreilly/tcpip/firewall/ch06_01.htm">about Packets here</a>
+        </p>
+        <div class="packets"><img src="media/tcp-vs-udp-protocols.jpg" width="560" height="350" alt="image of packets">
+        </div>
+        <p>
+            TCP and UDP are the protocols that are used in order to send those packets across the internet to the
+            receiver.
+            TCP(Transmission Control Protocol) is one of the main protocols of the Internet. It is connection-oriented
+            which
+            means it will first establish connection between computer and server and then it will start sending packets.
+            TCP
+            has reliable, error-checking and ordered delivery of packets. UDP(User Datagram Protocol) is one of main
+            protocols too. However, it does not provide reliable data stream. It is used mostly for video-streaming and
+            gaming.
+        </p>
+    </div>
+    <!-- routers -->
+    <div id="_routers" class="routers">
+        <h2>Routers</h2>
+        <p>
+            Router is a networking device that sends the data between computer networks. It has two functions such as
+            managing traffic and let multiple devices use the same network. There are many types of routers. The major
+            ones
+            are LANs(Local Area Network) and WANs(Wide Area Network). LAN is usually restricted to specific area and WAN
+            is
+            distributed across bigger area. Big companies are using WAN.
+        </p>
+        <div class="routerimg"><img src="media/Internet.jpg" width="470" height="205" alt="The picture of the web">
+        </div>
+    </div>
+    <!-- HTTP -->
+    <div id="_http" class="Http">
+        <h2>HTTP</h2>
+        <p>
+            HTTP(Hypertext Transfer Protocol) is the foundation of the World Wide Web. It was created by Tim Berners-Lee
+            at
+            CERN in 1989. It is loading pages using hypertext links. It also functions as request-response between
+            clients
+            and servers. The client(user agent) sends an HTTP request to the server in order to get a page, in return it
+            gets the status code, for example: "404"(Not Found) or "200" (OK).
+        </p>
+    </div>
+    <!-- HTML -->
+    <div id="_html" class="abouthtml">
+        <h2>HTML</h2>
+        <p>
+            HTML(Hyper Text Markup Language) is the language of all webpages on the Internet. HTML describes the
+            structure
+            of the webpage, where each HTML element is the building block of that page. It helps to create attractive
+            websites
+            using along CSS(Cascading Style Sheets) and scripting language as a Javascript. HTML consists of HTML tags
+            such
+            as header, body, paragraphs and so on. HTML5 is the newest version of HTML.
+        </p>
+        <div class="htmlimg"><img src="media/html" width="400" height="200" alt="image of HTML tag"></div>
+    </div>
+
+
+</body>
+
+</html>

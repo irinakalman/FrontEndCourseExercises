@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="wrapper"></div> -->
+    <script>
+        const newEl = document.createElement('p');
+        newEl.textContent = 'Hey I’m red!';
+        newEl.style.color = 'red';
+        document.body.appendChild(newEl);
+
+        const anotherEl = document.createElement('h3');
+        anotherEl.textContent = "I'm blue h3!";
+        anotherEl.style.color = 'blue';
+        document.body.appendChild(anotherEl);
+
+        const wrapper2 = document.createElement('div');
+        wrapper2.style.cssText = 'background: pink; border: black';
+
+        const firstEl = document.createElement('h1');
+        firstEl.textContent = "I’m in a div";
+        wrapper2.appendChild(firstEl);
+
+        const secondEl = document.createElement('p');
+        secondEl.textContent = "ME TOO!";
+        wrapper2.appendChild(secondEl);
+
+        document.body.appendChild(wrapper2);
+
+
+    </script>
+</body>
+</html>
