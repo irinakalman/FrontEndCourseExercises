@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        body {
+            background-color:#F56222;
+            text-align: center;
+            font-size: 18px;
+            padding: 50px;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        main {
+            width: 70%;
+            margin: 0 auto;
+            padding: 80px;
+            border-bottom: 6px double white;
+            border-top: 6px double white;
+        }
+
+        h1 {
+            font-size: 30px;
+            padding: 20px;
+            padding-right: 0px;
+            text-align: right;
+        }
+        
+        td {
+            padding-right: 10px;
+            padding-bottom: 10px;
+            text-align: right;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+        input {
+            padding: 5px;
+        }
+        button {
+            padding: 5px;
+        }
+        #formbuttons {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="register">
+        
+            <form action="https://athena.socialhackersacademy.org/form.php">
+                <table>
+                    <tr>
+                        <td><h1>Create your account</h1></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Name">Enter Name:</label></td>
+                        <td><input type="text" id="Name" name="Name" placeholder="Enter User here" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Email">Enter your email ID:</label></td>
+                        <td><input type="email" id="Email" name="email" placeholder="Enter Email ID here" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Username">Enter Username:</label></td>
+                        <td><input type="text" id="Username" name="Username" placeholder="Enter Username here" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Password">Enter Password:</label></td>
+                        <td><input type="password" id="Password" name="Password"  placeholder="Enter Password here" /></td>
+                    </tr>                    
+                    <tr>
+                        <td><label for="confirm_password">Confirm Password:</label></td>
+                        <td><input type="password" id="confirm_password" name="Confirm Password"  placeholder="Enter Password here"/></td>
+                    </tr>
+                    <tr>
+                        <td id="formbuttons" colspan="2">
+                            <input type="reset" value ="Clear Form" />
+                            <button>Create Account</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

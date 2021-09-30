@@ -1,0 +1,26 @@
+
+.text {
+      border: 3px solid black;
+      padding: 50px auto;
+}
+
+p {
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+      font-size: xx-large;
+}
+
+.places {
+      font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+      text-align: center;
+      margin: 50px;
+      padding: 25px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: black;
+}
