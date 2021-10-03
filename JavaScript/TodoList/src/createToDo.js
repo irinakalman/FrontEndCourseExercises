@@ -1,9 +1,9 @@
 // import { compareAsc, format } from '../node_modules/date-fns';
 import { ToDoRecord } from '../src/ToDoRecord.js';
 import { ProjectRecord } from '../src/ProjectRecord.js';
-import { projects, showNewTaskContainer, addItemToChecklist } from '../src/index.js';
+import { projects, showNewTaskContainer, addItemToChecklist, saveToLocalStorage } from '../src/index.js';
 
-function createToDo(todo, project) {
+export function createToDo(todo, project) {
     if (!(todo instanceof ToDoRecord && project instanceof ProjectRecord)) { return; }
     const wrapper = document.getElementById('taskViews');
     const div = document.createElement('div');
@@ -66,7 +66,6 @@ function createToDo(todo, project) {
     const body = document.createElement('div');
     body.classList.add('card-body');
     body.innerHTML = `
-        <img class="backgroundCardImg easterEgg" src="../media/card1.jpg">
         <h5 class="card-title mb-1">${todo.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted created">${created}</h6>
         <p class="card-text">${todo.description ? todo.description : '-'}</p>
@@ -125,29 +124,30 @@ function onEditTaskClicked(todo) {
     todo.checklist?.forEach(item => {
         addItemToChecklist(item);
     });
-    showNewTaskContainer();
+    showNewTaskContainer(true);
 }
 
 function onDeleteTaskClicked(todo, project, parentElement, childElement) {
     parentElement.removeChild(childElement);
     project.removeFromList(todo);
     updateProjectTasksLength(project);
+    saveToLocalStorage();
 }
 
 function changeCheckListCheck(check, checkbox) {
     check.checked = !check.checked;
     checkbox.checked = check.checked;
+    saveToLocalStorage();
 }
 
 function onBadgeClick(todo, badgeElement) {
     if (todo.completed) {
         todo.completed = null;
         badgeElement.classList.replace('completedBadge', 'unCompletedBadge');
+        saveToLocalStorage();
         return;
     }
     todo.completed = new Date();
     badgeElement.classList.replace('unCompletedBadge', 'completedBadge');
+    saveToLocalStorage();
 }
-
-
-export { createToDo };

@@ -1,5 +1,5 @@
 import { ToDoRecord } from '../src/ToDoRecord.js';
-class ProjectRecord {
+export class ProjectRecord {
     constructor(name) {
         this.id = Math.random();
         this.name = name;
@@ -19,6 +19,12 @@ class ProjectRecord {
             this.toDoList.splice(this.toDoList.indexOf(find), 1);
         }
     }
-}
 
-export { ProjectRecord }
+    toModel() {
+        return {
+            id: this.id,
+            name: this.name,
+            toDoList: this.toDoList.map(t => t.toModel())
+        }
+    }
+}

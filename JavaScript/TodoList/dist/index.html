@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="bgDiv"></div>
     <div class="container">
         <!-- <h1 id="indexTitle">Hey, we are really excited to have you with us! Click on the ‘new’ button to add your first task</h1> -->
         
@@ -22,8 +23,9 @@
         <h1 id="indexTitle" class="mt-5 mb-5">&lt;todo-er/&gt;</h1>
         <div id="newProject" class="card">
             <div class="card-body">
-                <h5 class="card-title">New Project</h5>
+                <h5 id="newProjectTitle"class="card-title">New Project</h5>
                 <form id="addProjectForm" class="needs-validation" novalidate>
+                    <input type="hidden" id="addProjectFormProjectID" name="projectID" value="">
                     <div class="form-group">
                         <label for="name">Project Name</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
@@ -51,6 +53,7 @@
               <button type="button"
                       class="btn btn-primary mr-4 createCardButton"
                       id="createProjectButton">
+                      <img class="backgroundCardImg easter animateEaster hideMe" src="../media/card1.jpg">
                 <div class="circle">
                     +
                 </div>
@@ -60,7 +63,7 @@
 
         <div id="newTask" class="card">
             <div class="card-body">
-                <h5 class="card-title">New Task</h5>
+                <h5 id="newTaskTitle" class="card-title">New Task</h5>
                 <form id="addTaskForm" class="needs-validation" novalidate>
                     <input type="hidden" id="todoID" name="todoID" value="">
                     <input type="hidden" id="addTaskFormProjectID" name="projectID" value="">
@@ -92,7 +95,7 @@
                         <label for="checklist-item-0">Checklist</label>
                         <div id="checklistDiv">
                             
-                        </div>
+                        </div> 
                         <button id="addItemToChecklist" type="button" class="btn btn-success cardBtn mt-2">Add item</button>
                     </div>
                     <div class="form-group">
@@ -130,6 +133,7 @@
             <button type="button"
                     class="btn btn-primary createCardButton mr-4"
                     id="createTaskButton">
+                    <img class="backgroundCardImg easter hideMe" src="../media/card1.jpg">
                 <div class="circle">
                     +
                 </div>

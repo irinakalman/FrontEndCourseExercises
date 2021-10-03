@@ -1,4 +1,4 @@
-class ToDoRecord {
+export class ToDoRecord {
     completed = null;
     constructor(title, description, dueDate, priority, notes) {
         this.id = Math.random();
@@ -31,6 +31,18 @@ class ToDoRecord {
         if (!find) { return; }
         this.checklist.splice(this.checklist.indexOf(find), 1);
     }
-}
 
-export { ToDoRecord }
+    toModel() {
+        return {
+            id: this.id,
+            title: this.title,
+            description: this.description,
+            dueDate: this.dueDate,
+            priority: this.priority,
+            notes: this.notes,
+            createdDate: this.createdDate,
+            completed: this.completed,
+            checklist: this.checklist
+        }
+    }
+}

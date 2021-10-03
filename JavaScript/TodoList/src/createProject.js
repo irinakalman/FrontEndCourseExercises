@@ -2,18 +2,18 @@
 import { ToDoRecord } from '../src/ToDoRecord.js';
 import { ProjectRecord } from '../src/ProjectRecord.js';
 import { createToDo } from '../src/createToDo.js';
-import { projects } from '../src/index.js';
+import { projects, showNewProjectContainer, saveToLocalStorage } from '../src/index.js';
 
-function createProject (project) {
+export function createProject (project) {
     if (!(project instanceof ProjectRecord)) { return; }
     const wrapper = document.getElementById('projectViews');
     const div = document.createElement('div');
-    div.id = project.id;
+    div.id = 'project-' + project.id;
     div.classList.add('card', 'projectView', 'mb-4', 'mr-4');
     const header = document.createElement('div');
     header.classList.add('card-header', 'bg-dark');
     const buttonDiv = document.createElement('div');
-    buttonDiv.classList.add('row');
+    buttonDiv.classList.add('row', 'end');
 
     const editButton = document.createElement('button');
     editButton.classList.add('cardHeaderBtn', 'editBtn', 'mr-3');
@@ -43,8 +43,7 @@ function createProject (project) {
     const body = document.createElement('div');
     body.classList.add('card-body');
     body.innerHTML = `
-        <img class="backgroundCardImg easterEgg" src="../media/card1.jpg">
-            <h5 class="card-title">${project.name}</h5>
+        <h5 class="card-title">${project.name}</h5>
         <h6 id="tasksText-${project.id}" class="card-subtitle mb-2 text-muted notes">${tasksText}</h6>
     `;
     div.onclick = () => selectProject(project.id);
@@ -54,13 +53,16 @@ function createProject (project) {
 
 function onEditProjectClicked(e, project, parentElement, childElement) {
     e.stopPropagation();
-    console.log(project);
+    document.forms['addProjectForm']['projectID'].value = project.id;
+    document.forms['addProjectForm']['name'].value = project.name;
+    showNewProjectContainer(true);
 }
 
 function onDeleteProjectClicked(e, project, parentElement, childElement) {
     e.stopPropagation();
     parentElement.removeChild(childElement);
     projects.splice(projects.indexOf(project), 1);
+    saveToLocalStorage();
 }
 
 function selectProject(projectID) {
@@ -85,5 +87,3 @@ function selectProject(projectID) {
 
     taskViews.style.display = 'flex';
 }
-
-export { createProject };

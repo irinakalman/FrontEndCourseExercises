@@ -3,9 +3,13 @@
 #indexTitle {
     color: white;
     font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    user-select: none;
 }
 
 #backButton {
+    z-index: 2;
+    border: 1px solid #c6c6c6;
     display: none;
     position: fixed;
     bottom: 1rem;
@@ -34,15 +38,15 @@
     color: black;
 }
 
-.container::before {
+#bgDiv {
     content: '';
     background: url('../media/wp2450670.png') no-repeat center center/cover;
-    position: absolute;
+    position: fixed;
     opacity: 0.9;
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: -1;
 
 }
@@ -60,11 +64,13 @@
 }
 
 .card-header > .row {
-    padding-right: 1rem;
-    padding-left: 1rem;
     padding-top: 2px;
     justify-content: space-between;
     align-items: center;
+}
+
+.card-header > .row.end {
+    justify-content: end;
 }
 
 .card-body {
@@ -103,7 +109,7 @@
 
 .completedBadge {
     opacity: 1;
-    background: none;
+    background: #585858;
     border: 1px solid;
     font-weight: 100;
     font-size: 0.9rem;
@@ -117,7 +123,7 @@
 
 .unCompletedBadge {
     opacity: 0.3;
-    background: none;
+    background: #585858;
     border: 1px solid;
     font-weight: 100;
     font-size: 0.9rem;
@@ -145,7 +151,7 @@
     font-style: italic;
 }
 
-.easterEgg {
+.hideMe {
     display: none;
 }
 
@@ -156,17 +162,35 @@
     left: 0;
     bottom: 0px;
     z-index: 0;
-    opacity: 0.15;
+    opacity: 1;
     object-fit: cover;
+    
+    
 }
 
+.animateEaster {
+    object-position: 0px -50px;
+    animation: MoveUpDown 3s linear infinite;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        object-position: 0px -50px;
+    }
+    50% {
+        object-position: 0px -124px;
+    }
+  }
+
 .createCardButton {
+    position: relative;
     width: 18rem;
     background: none;
     outline: none !important;
     box-shadow: none;
     border: 2px solid white !important;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .createCardButton:hover {
@@ -207,7 +231,9 @@
     // vertical-align: baseline; 
 } */
 
-
+.row {
+    margin: 0 !important;
+}
 
 #newProject {
     display: none;

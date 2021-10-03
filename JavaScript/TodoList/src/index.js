@@ -8,16 +8,22 @@ export const projects = [];
 
 const addProjectForm = document.getElementById('addProjectForm');
 const addTaskForm = document.getElementById('addTaskForm');
-const defaultProject = new ProjectRecord('default');
-projects.push(defaultProject);
-const firstTodo = new ToDoRecord('test', 'description test', new Date(), 'high', 'my notes test');
-const check1 = firstTodo.addToCheckList('my check 1');
-check1.checked = true;
-defaultProject.addToList(firstTodo);
 
-createProject(defaultProject);
+const data = localStorage.getItem('myProjectTodoData');
+if (data) { loadFromLocalStorage(data); }
 
-document.getElementById('createProjectButton').addEventListener('click', () => createProjectButtonClicked());
+if (projects.length === 0) {
+    const defaultProject = new ProjectRecord('default');
+    projects.push(defaultProject);
+    const firstTodo = new ToDoRecord('test', 'description test', new Date(), 'high', 'my notes test');
+    const check1 = firstTodo.addToCheckList('my check 1');
+    check1.checked = true;
+    defaultProject.addToList(firstTodo);
+    
+    createProject(defaultProject);
+}
+
+document.getElementById('createProjectButton').addEventListener('click', () => showNewProjectContainer());
 document.getElementById('cancelNewProjectButton').addEventListener('click', () => backToProjects());
 
 document.getElementById('createTaskButton').addEventListener('click', () => showNewTaskContainer());
@@ -27,16 +33,25 @@ document.getElementById('cancelNewTaskButton').addEventListener('click', () => b
 document.getElementById('backButton').addEventListener('click', () => backFromProject());
 
 document.getElementById('addItemToChecklist').addEventListener('click', () => addItemToChecklist());
+document.getElementById('indexTitle').addEventListener('click', function (evt) {
+    if (evt.detail === 3) {
+        Object.values(document.querySelectorAll('.easter')).forEach(element => {
+            element.classList.toggle('hideMe');
+        });
+    }
+});
 
 
-function createProjectButtonClicked() {
+export function showNewProjectContainer(update) {
     document.getElementById('projectViews').style.display = 'none';
     document.getElementById('newProject').style.display = 'block';
+    document.getElementById('newProjectTitle').innerHTML = update ? 'Update Project' : 'New Project';
 }
 
 function backToProjects() {
     document.getElementById('newProject').style.display = 'none';
     document.getElementById('projectViews').style.display = 'flex';
+    document.forms['addProjectForm']['projectID'].value = '';
     addProjectForm.reset();
     addProjectForm.classList.remove('was-validated');
 }
@@ -48,10 +63,11 @@ function backFromProject() {
     document.getElementById('projectViews').style.display = 'flex';
 }
 
-export function showNewTaskContainer() {
+export function showNewTaskContainer(update) {
     document.getElementById('backButton').style.display = 'none';
     document.getElementById('taskViews').style.display = 'none';
     document.getElementById('newTask').style.display = 'block';
+    document.getElementById('newTaskTitle').innerHTML = update ? 'Update Task' : 'New Task';
 }
 
 function backToTasks() {
@@ -134,6 +150,32 @@ function _createToDo(todo, project) {
     createToDo(todo, project);
 }
 
+function loadFromLocalStorage(data) {
+    if (!data) { return; }
+    const _projects = JSON.parse(data);
+    _projects.forEach(p => {
+        const project = new ProjectRecord(p.name);
+        project.id = p.id;
+        p.toDoList?.forEach(t => {
+            const dueDate = t.dueDate ? new Date(t.dueDate) : null;
+            const todo = new ToDoRecord(t.title, t.description, dueDate, t.priority, t.notes);
+            todo.id = t.id;
+            todo.completed = t.completed ? new Date(t.completed) : null;
+            todo.createdDate = new Date(t.createdDate);
+            t.checklist?.forEach(c => {
+                const check = todo.addToCheckList(c.title, c.id);
+                check.checked = c.checked;
+            });
+            project.addToList(todo);
+        });
+        projects.push(project);
+        createProject(project);
+    });
+}
+
+export function saveToLocalStorage() {
+    localStorage.setItem('myProjectTodoData', JSON.stringify(projects.map(project => project.toModel())));
+}
 
 (function() {
     'use strict';
@@ -148,10 +190,21 @@ function _createToDo(todo, project) {
             // Form is valid so we continue proccessing data
             const formData = new FormData(e.target);
             const name = formData.get('name');
-            const project = new ProjectRecord(name);
+
+            const projectID = formData.get('projectID');
+            let project = projects.find(p => String(p.id) === projectID);
+            if (project) {
+                project.name = name;
+                const projectViewDiv = document.getElementById('project-' + project.id);
+                projectViewDiv.parentElement.removeChild(projectViewDiv);
+            } else {
+                project = new ProjectRecord(name);
+                projects.push(project);
+            }
+
             createProject(project);
-            projects.push(project);
             backToProjects();
+            saveToLocalStorage();
         }, false);
 
         addTaskForm.addEventListener('submit', function(e) {
@@ -205,6 +258,7 @@ function _createToDo(todo, project) {
 
             _createToDo(todo, project);
             backToTasks();
+            saveToLocalStorage();
         }, false);
     }, false);
 })();
