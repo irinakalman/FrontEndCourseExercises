@@ -1,0 +1,69 @@
+body {
+    text-align: center;
+    margin: auto;
+    margin-top: 8%;
+    background-color: rgb(23, 13, 37);
+    color: cornsilk;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 75ch;
+    line-height: 150%;
+    display: flex;
+    flex-flow: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a {
+    color: white;
+
+}
+
+nav a:hover {
+    color: tomato;
+}
+
+ul li {
+    list-style-type: none;
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+nav {
+    border: white solid 3px;
+    width: 400px;
+    height: 300px;
+    margin-left: 100px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+iframe {
+    border-width: 0px;
+}
+
+p {
+    padding: 35px;
+
+}
+
+.network {
+    padding-bottom: 5px;
+}
+
+h1,h2 {
+    margin-top: 8%;
+    font-family: 'Farro', sans-serif;
+}
+h1 {
+    margin-bottom: 10%;
+}
+
+.link {
+    color: rgb(255, 11, 11);
+}
